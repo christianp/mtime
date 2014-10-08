@@ -42,7 +42,7 @@ function refreshView() {
 	document.querySelector('#fact-form').className = fact ? 'hidden': '';
 	var factInput = document.querySelector('textarea[name=fact-input]');
 	if(fact) {
-		document.getElementById('yes-fact').innerHTML = fact;
+		document.getElementById('yes-fact').innerHTML = fact.replace('\n','\n<br>');
 		MathJax.Hub.Queue(['Typeset',MathJax.Hub,factElement]);
 		factInput.value = fact;
 	} else {
@@ -69,6 +69,7 @@ window.onload = function() {
 	}
 	document.querySelector('#yes-fact').onclick = function() {
 		document.querySelector('#fact').className = 'edit';
+		document.querySelector('#fact-form textarea[name=fact-input]').focus();
 	}
 
 	if(localStorage && localStorage['time-facts']) {

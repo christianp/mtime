@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <style type="text/css">
+    html, body {height: 100%;}
+    body {text-align: center;}
+    a#answer {
+      display: inline-block;
+      margin-top: 200px;
+      font-weight: bold;
+      font-size: 120pt;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: black;
+    }
+    a#explain {
+      display: inline-block;
+      margin-top: 0px;
+      font-weight: bold;
+      font-size: 30pt;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <script type="text/javascript" src="./facts.js"></script>
+</head>
+<body>
+<a id="answer">
+    12:34
+</a></br>
+<a id="explain">
+    Error
+</a>
+
+<script type="text/javascript">
+	updateFact();
+	setInterval(updateFact, 1000 * 10);
+</script>
+</body>
+</html>

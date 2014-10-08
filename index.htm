@@ -1,42 +1,67 @@
 <!doctype html>
 <html lang="en">
-<head>
- <meta charset="utf-8" />
- <style type="text/css">
-    html, body {height: 100%;}
-    body {text-align: center;}
-    a#answer {
-      display: inline-block;
-      margin-top: 200px;
-      font-weight: bold;
-      font-size: 120pt;
-      font-family: Arial, sans-serif;
-      text-decoration: none;
-      color: black;
-    }
-    a#explain {
-      display: inline-block;
-      margin-top: 0px;
-      font-weight: bold;
-      font-size: 30pt;
-      font-family: Arial, sans-serif;
-      text-decoration: none;
-      color: black;
-    }
-  </style>
-  <script type="text/javascript" src="./facts.js"></script>
-</head>
-<body>
-<a id="answer">
-    12:34
-</a></br>
-<a id="explain">
-    Error
-</a>
+	<head>
+		<meta charset="utf-8" />
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				font-family: sans-serif;
+			}
+			body {
+				text-align: center;
+			}
 
-<script type="text/javascript">
-	updateFact();
-	setInterval(updateFact, 1000 * 10);
-</script>
-</body>
+			#time{
+				margin-top: 200px;
+				font-weight: bold;
+				font-size: 120pt;
+			}
+
+			#fact {
+				margin-top: 0px;
+				font-size: 30pt;
+			}
+
+			#yes-fact, #no-fact {
+				display: none;
+			}
+
+			#fact.yes #yes-fact {
+				display: block;
+			}
+
+			#fact.no #no-fact {
+				display: block;
+			}
+
+			#fact-form, #fact-form textarea {
+				font-size: 20pt;
+			}
+			#fact-form textarea {
+				vertical-align: middle;
+				font-family: sans-serif;
+			}
+			#fact.yes #fact-form {
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="facts.js"></script>
+
+		<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div id="time"></div>
+		<div id="fact">
+			<div id="yes-fact"></div>
+			<div id="no-fact">
+				<p>I don't know a fact about this time</p>
+			</div>
+			<form id="fact-form">
+				<label>Write an interesting fact about this time:
+					<textarea name="fact-input"></textarea>
+				</label>
+				<button>Submit</button>
+			</form>
+		</div>
+	</body>
 </html>
